@@ -1,0 +1,22 @@
+{
+  "name": "react-express-ts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "server:dev": "nodemon server/src/index.ts",
+    "server:build": "tsc --project server/tsconfig.json",
+    "client:dev": "cd client && npm run dev",
+    "client:build": "cd client && npm run build",
+    "build": "npm run server:build && npm run client:build",
+    "start": "node server/dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
