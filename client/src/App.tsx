@@ -14,7 +14,7 @@ function App() {
   const fetchData = async () => {
     setIsLoading(true)
     setError('')
-    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+    const apiUrl = import.meta.env.VITE_BACKEND_API || 'http://localhost:5000'
 
     try {
       // Fetch both endpoints
