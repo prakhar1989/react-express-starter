@@ -1,16 +1,16 @@
 {
   "name": "react-express-ts",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
   "scripts": {
-    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
-    "server:dev": "nodemon server/src/index.ts",
-    "server:build": "tsc --project server/tsconfig.json",
-    "client:dev": "cd client && npm run dev",
-    "client:build": "cd client && npm run build",
-    "build": "npm run server:build && npm run client:build",
-    "start": "node server/dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "concurrently \"npm run dev --workspace=server\" \"npm run dev --workspace=client\"",
+    "build": "npm run build --workspace=server && npm run build --workspace=client",
+    "start": "npm run start --workspace=server",
+    "test": "npm run test --workspaces --if-present"
   },
   "keywords": [],
   "author": "",
