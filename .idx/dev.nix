@@ -17,6 +17,7 @@
     ];
     workspace = {
       onCreate = {
+        npm-install = "npm i --no-audit --no-progress --timing";
         default.openFiles = [
           "src/App.tsx"
         ];
