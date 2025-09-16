@@ -5,3 +5,8 @@
     height="32"
   />
 </a>
+
+# TODO
+
+- Open port 5000
+- Set .env in client to point to workstation URL
